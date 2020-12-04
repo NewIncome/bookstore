@@ -1,3 +1,11 @@
+# MagicBooks Inc. Bookstore
+Front-end web app to help fictional Magic-books Inc. organize and manage their bookstore. It should be fast, dynamic and resposive to user actions. Coded mainly with React and Redux.
+
+## Links
+[GitHub Repo](https://github.com/NewIncome/bookstore)
+[Heroku Livelink](https://magicbooksinc-bookstore.herokuapp.com/)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
