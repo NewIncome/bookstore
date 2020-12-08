@@ -1,0 +1,8 @@
+.book-list-wrapper {
+  text-align: center;
+}
+
+.book-list-wrapper > table {
+  text-align: center;
+  width: 100%;
+}
