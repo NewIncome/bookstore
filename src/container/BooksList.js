@@ -1,11 +1,10 @@
-/* eslint-disable react/forbid-prop-types, react/no-unused-state */
+/* eslint-disable react/forbid-prop-types, react/no-unused-state, no-unused-vars */
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Book from './Book';
-import './book.css';
-import { createBook } from '../actions';
+import Book from '../components/Book';
+import '../components/book.css';
 
 class BooksList extends Component {
   constructor(props) {
@@ -44,4 +43,4 @@ BooksList.propTypes = {
   list: PropTypes.array.isRequired,
 };
 
-export default connect(mapStateToProps, { createBook })(BooksList);
+export default connect(mapStateToProps, {})(BooksList);

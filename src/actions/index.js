@@ -11,4 +11,4 @@ const removeBook = book => dispatch => {
 
 export {
   createBook, removeBook,
-};
+}

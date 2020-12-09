@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unused-state */
+/* eslint-disable react/no-unused-state, class-methods-use-this, no-unused-vars */
 
 import React, { Component } from 'react';
 
@@ -16,15 +16,15 @@ class BooksForm extends Component {
 
   handleChange(event) {
     // e.preventDefault();
-    const { name, value } = event.target;
-    switch (name) {
-      case 'title':
-      case 'category':
-        this.setState(prevState => ({ ...prevState, [name]: [value] }));
-        break;
-      default:
-        this.setState({ [name]: value });
-    }
+    // const { name, value } = event.target;
+    // switch (name) {
+    //   case 'title':
+    //   case 'category':
+    //     this.setState(prevState => ({ ...prevState, [name]: [value] }));
+    //     break;
+    //   default:
+    //     this.setState({ [name]: value });
+    // }
   }
 
   render() {
@@ -34,14 +34,9 @@ class BooksForm extends Component {
       <>
         <h1>BooksForm!!!</h1>
         <form>
-          <input
-            placeholder="Enter book titile"
-            name="title"
-            value={title}
-            onChange={this.handleChange}
-          />
-          <select onChange={this.handleChange}>
-            <option>Category</option>
+          <input placeholder="Enter book titile" />
+          <select>
+            <option disabled selected hidden>Select Category</option>
             {/* eslint-disable react/no-array-index-key */}
             {bookCategories.map((item, index) => (
               <option value={category} key={index}>{item}</option>
