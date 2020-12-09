@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function Book({ bookObject }) {
   return (
@@ -9,5 +10,13 @@ function Book({ bookObject }) {
     </tr>
   );
 }
+
+Book.propTypes = {
+  bookObject: PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    category: PropTypes.string,
+  }).isRequired,
+};
 
 export default Book;

@@ -1,14 +1,14 @@
-import { CREATE_BOOK, REMOVE_BOOK } from '../actions/types';
+/* eslint-disable no-unused-vars */
+import { CREATE_BOOK, REMOVE_BOOK } from './types';
 
-const createBook = () => dispatch => {
+const createBook = book => dispatch => {
 // do something
-}
+};
 
-const removeBook = () => dispatch => {
+const removeBook = book => dispatch => {
   // do something
-  }
-
+};
 
 export {
-  createBook, removeBook 
-}
+  createBook, removeBook,
+};
