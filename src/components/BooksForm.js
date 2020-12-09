@@ -10,20 +10,41 @@ class BooksForm extends Component {
       title: '',
       category: '',
     };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    // e.preventDefault();
+    const { name, value } = event.target;
+    switch (name) {
+      case 'title':
+      case 'category':
+        this.setState(prevState => ({ ...prevState, [name]: [value] }));
+        break;
+      default:
+        this.setState({ [name]: value });
+    }
   }
 
   render() {
+    const { title, category } = this.state;
     const bookCategories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
     return (
       <>
         <h1>BooksForm!!!</h1>
         <form>
-          <input placeholder="Enter book titile" />
-          <select>
+          <input
+            placeholder="Enter book titile"
+            name="title"
+            value={title}
+            onChange={this.handleChange}
+          />
+          <select onChange={this.handleChange}>
             <option>Category</option>
             {/* eslint-disable react/no-array-index-key */}
             {bookCategories.map((item, index) => (
-              <option key={index}>{item}</option>
+              <option value={category} key={index}>{item}</option>
             ))}
           </select>
           <button type="submit">Create Book</button>

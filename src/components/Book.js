@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 
 function Book({ bookObject }) {
   return (
-    <tr>
-      <td>{bookObject.id}</td>
-      <td>{bookObject.title}</td>
-      <td>{bookObject.category}</td>
-    </tr>
+    <tbody>
+      <tr>
+        <td>{bookObject.id}</td>
+        <td>{bookObject.title}</td>
+        <td>{bookObject.category}</td>
+      </tr>
+    </tbody>
   );
 }
 
