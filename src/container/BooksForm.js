@@ -20,7 +20,7 @@ class BooksForm extends Component {
         <form>
           <input placeholder="Enter book titile" />
           <select>
-            <option>Category</option>
+            <option disabled selected hidden>Select Category</option>
             {/* eslint-disable react/no-array-index-key */}
             {bookCategories.map((item, index) => (
               <option key={index}>{item}</option>

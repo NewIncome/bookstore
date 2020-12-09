@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import PropTypes from 'prop-types';
-import Book from './Book';
-import './book.css';
-// import { createBook } from '../actions';
+import Book from '../components/Book';
+import '../components/book.css';
+import { createBook } from '../actions';
 
 class BooksList extends Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class BooksList extends Component {
             <th>Title</th>
             <th>Category</th>
           </tr>
-          {list.map(book => (
+          {list && list.map(book => (
             <Book bookObject={book} key={book.id} />
           ))}
         </table>
@@ -36,8 +36,10 @@ class BooksList extends Component {
   }
 }
 
-const mapStateToProps = (/* state */) => ({
-  //
-});
+const mapStateToProps = ({ list }) => ({ list });
 
-export default connect(mapStateToProps, { /* createBook */ })(BooksList);
+// BooksList.propTypes = {
+//   list: PropTypes.array.isRequired,
+// };
+
+export default connect(mapStateToProps, { createBook })(BooksList);
