@@ -12,7 +12,6 @@ class BooksList extends Component {
 
     this.state = {
       list: [],
-      // errors: '',
     };
   }
 
