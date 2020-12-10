@@ -21,10 +21,14 @@ const initialState = [
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_BOOK:
-      return {
+      return [
         ...state,
-        list: action.payload,
-      };
+        {
+          id: Math.floor(Math.random() * 10),
+          title: action.payload.title,
+          category: action.payload.category,
+        },
+      ];
     case REMOVE_BOOK:
       return {
         ...state,
