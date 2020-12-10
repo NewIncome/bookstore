@@ -1,18 +1,19 @@
 import { CREATE_BOOK, REMOVE_BOOK } from '../actions/types';
+import assignId from '../utils';
 
 const initialState = [
   {
-    id: Math.floor(Math.random() * 10),
+    id: assignId(),
     title: 'React for Dummies',
     category: 'Coding',
   },
   {
-    id: Math.floor(Math.random() * 10),
+    id: assignId(),
     title: 'Romeo & Juliet',
     category: 'Drama',
   },
   {
-    id: Math.floor(Math.random() * 10),
+    id: assignId(),
     title: 'The Lord of the Rings',
     category: 'Action',
   },
@@ -24,15 +25,13 @@ const bookReducer = (state = initialState, action) => {
       return [
         ...state,
         {
-          id: Math.floor(Math.random() * 10),
+          id: assignId(),
           title: action.payload.title,
           category: action.payload.category,
         },
       ];
     case REMOVE_BOOK:
-      return {
-        ...state,
-      };
+      return state.filter(book => book.id !== action.payload);
     default:
       return state;
   }

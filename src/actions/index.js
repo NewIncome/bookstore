@@ -6,9 +6,10 @@ const createBook = book => ({
   payload: book,
 });
 
-const removeBook = book => dispatch => {
-  // do something
-};
+const removeBook = id => ({
+  type: REMOVE_BOOK,
+  payload: id,
+});
 
 export {
   createBook, removeBook,

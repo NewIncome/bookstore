@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unused-state, class-methods-use-this, no-unused-vars */
+/* eslint-disable react/no-unused-state, class-methods-use-this, no-unused-vars, no-console */
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -27,7 +27,13 @@ class BooksForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const { createBook } = this.props;
-    console.log(createBook);
+    const { category, title } = this.state;
+
+    if (category && title) {
+      createBook({ category, title });
+
+      this.setState({ title: '', category: '' });
+    }
   }
 
   render() {
@@ -60,10 +66,10 @@ class BooksForm extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => dispatch({ createBook: book => { createBook(book); } });
+const mapDispatchToProps = dispatch => ({ createBook: book => dispatch(createBook(book)) });
 
 BooksForm.propTypes = {
   createBook: PropTypes.func.isRequired,
 };
 
-export default connect(() => {}, mapDispatchToProps)(BooksForm);
+export default connect(() => ({}), mapDispatchToProps)(BooksForm);
