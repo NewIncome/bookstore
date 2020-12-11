@@ -1,3 +1,5 @@
 const assignId = () => Math.floor(Math.random() * 1000);
 
-export default assignId;
+const bookCategories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+
+export { assignId, bookCategories };

@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { CREATE_BOOK, REMOVE_BOOK } from './types';
+import { CREATE_BOOK, REMOVE_BOOK, CHANGE_FILTER } from './types';
 
 const createBook = book => ({
   type: CREATE_BOOK,
@@ -11,6 +11,11 @@ const removeBook = id => ({
   payload: id,
 });
 
+const changeFilter = category => ({
+  type: CHANGE_FILTER,
+  payload: category,
+});
+
 export {
-  createBook, removeBook,
+  createBook, removeBook, changeFilter,
 };

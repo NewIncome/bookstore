@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { createBook } from '../actions';
+import { bookCategories } from '../utils';
 
 class BooksForm extends Component {
   constructor(props) {
@@ -38,7 +39,6 @@ class BooksForm extends Component {
 
   render() {
     const { title, category } = this.state;
-    const bookCategories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
     return (
       <>
         <h1>BooksForm!!!</h1>
