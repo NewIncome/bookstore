@@ -54,9 +54,8 @@ class BooksForm extends Component {
             onChange={this.handleChange}
           >
             <option disabled selected hidden>Select Category</option>
-            {/* eslint-disable react/no-array-index-key */}
-            {bookCategories.map((item, index) => (
-              <option value={item} key={index}>{item}</option>
+            {bookCategories.map(item => (
+              <option value={item} key={item}>{item}</option>
             ))}
           </select>
           <button type="submit">Create Book</button>

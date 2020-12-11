@@ -1,23 +1,23 @@
 /* eslint-disable react/forbid-prop-types, react/no-unused-state, no-unused-vars */
 
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import '../components/book.css';
 import { removeBook, changeFilter } from '../actions';
-import CategoryFilter from './CategoryFilter';
+import CategoryFilter from '../components/CategoryFilter';
 
 function BooksList(props) {
   const {
-    list, removeBook, filter, changeFilter,
+    list, removeBook, changeFilter, filter,
   } = props;
   const handleRemoveBook = id => id;
-  const handleFilterChange = category => changeFilter(category);
+  const handleFilterChange = category => category;
 
   return (
     <section className="book-list-wrapper">
-      <CategoryFilter filterBooks={() => handleFilterChange(filter)} />
+      <CategoryFilter filterBooks={sorter => handleFilterChange(changeFilter(sorter))} />
       <h1>BooksList!!!</h1>
       <table>
         <thead>
@@ -36,7 +36,8 @@ function BooksList(props) {
             key={book.id}
           />
         ))}
-        {!filter && list.map(book => (
+
+        {(!filter || filter === 'All') && list.map(book => (
           <Book
             deleteBook={() => handleRemoveBook(removeBook(book.id))}
             bookObject={book}

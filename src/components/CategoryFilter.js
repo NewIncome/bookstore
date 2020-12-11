@@ -15,27 +15,29 @@ class CategoryFilter extends React.Component {
     event.preventDefault();
     const { name, value } = event.target;
     this.setState(prevState => ({ ...prevState, [name]: value }));
-
-    const { filterBooks } = this.props;
-    const { category } = this.state;
-    filterBooks(category);
   }
 
   render() {
+    const { filterBooks } = this.props;
+    const { category } = this.state;
+    if (category) {
+      filterBooks(category);
+    }
+
     return (
       <>
-        <span>Filter:</span>
-        <select
-          id="category"
-          name="category"
-          onChange={this.handleChange}
-        >
-          <option disabled selected hidden>All</option>
-          {/* eslint-disable react/no-array-index-key */}
-          {bookCategories.map((item, index) => (
-            <option value={item} key={index}>{item}</option>
-          ))}
-        </select>
+        <form>
+          <span>Filter:</span>
+          <select
+            name="category"
+            onChange={this.handleChange}
+          >
+            <option disabled selected hidden>All</option>
+            {bookCategories.map(item => (
+              <option value={item} key={item}>{item}</option>
+            ))}
+          </select>
+        </form>
       </>
     );
   }
