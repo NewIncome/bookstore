@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { createBook } from '../actions';
+import { bookCategories } from '../utils';
 
 class BooksForm extends Component {
   constructor(props) {
@@ -38,7 +39,6 @@ class BooksForm extends Component {
 
   render() {
     const { title, category } = this.state;
-    const bookCategories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
     return (
       <>
         <h1>BooksForm!!!</h1>
@@ -54,9 +54,8 @@ class BooksForm extends Component {
             onChange={this.handleChange}
           >
             <option disabled selected hidden>Select Category</option>
-            {/* eslint-disable react/no-array-index-key */}
-            {bookCategories.map((item, index) => (
-              <option value={item} key={index}>{item}</option>
+            {bookCategories.map(item => (
+              <option value={item} key={item}>{item}</option>
             ))}
           </select>
           <button type="submit">Create Book</button>

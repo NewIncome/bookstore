@@ -1,16 +1,16 @@
 import { CREATE_BOOK, REMOVE_BOOK } from '../actions/types';
-import assignId from '../utils';
+import { assignId } from '../utils';
 
 const initialState = [
   {
     id: assignId(),
     title: 'React for Dummies',
-    category: 'Coding',
+    category: 'History',
   },
   {
     id: assignId(),
     title: 'Romeo & Juliet',
-    category: 'Drama',
+    category: 'Horror',
   },
   {
     id: assignId(),
