@@ -41,25 +41,29 @@ class BooksForm extends Component {
     const { title, category } = this.state;
     return (
       <>
-        <h1>BooksForm!!!</h1>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            placeholder="Enter book title"
-            name="title"
-            value={title}
-            onChange={this.handleChange}
-          />
-          <select
-            name="category"
-            onChange={this.handleChange}
-          >
-            <option disabled selected hidden>Select Category</option>
-            {bookCategories.map(item => (
-              <option value={item} key={item}>{item}</option>
-            ))}
-          </select>
-          <button type="submit">Create Book</button>
-        </form>
+        <section id="form-section">
+          <h2 className="form-title">ADD NEW BOOK</h2>
+          <form className="form" onSubmit={this.handleSubmit}>
+            <input
+              className="form-book-title"
+              placeholder="Book title"
+              name="title"
+              value={title}
+              onChange={this.handleChange}
+            />
+            <select
+              className="form-book-category"
+              name="category"
+              onChange={this.handleChange}
+            >
+              <option disabled selected hidden>Select Category</option>
+              {bookCategories.map(item => (
+                <option value={item} key={item}>{item}</option>
+              ))}
+            </select>
+            <button className="form-btn" type="submit">ADD BOOK</button>
+          </form>
+        </section>
       </>
     );
   }

@@ -1,8 +1,91 @@
-.book-list-wrapper {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&family=Montserrat:wght@700&display=swap');
+
+#book {
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+  padding: 30px;
+  text-align: left;
+  width: 90%;
 }
 
-.book-list-wrapper > table {
-  text-align: center;
-  width: 100%;
+.book-info { width: 40%; }
+
+.book-category {
+  color: var(--grray);
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.book-title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 22px;
+}
+
+.book-author,
+.info-edit {
+  color: var(--azure-light);
+  font-size: 14px;
+}
+
+.info-edit { margin-top: 15px; }
+
+.removeBtn {
+  border-left: 1px solid var(--l-gray);
+  border-right: 1px solid var(--l-gray);
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 15px;
+  padding: 5px 15px;
+}
+
+.book-percent {
+  border-right: 2px solid var(--l-gray);
+  margin: auto;
+}
+
+.percent-circle {
+  border: 5px solid #ddd;
+  border-radius: 50%;
+  float: left;
+  height: 68px;
+  margin-right: 20px;
+  width: 68px;
+}
+
+.percent-text {
+  display: inline-block;
+  padding-right: 60px;
+}
+
+.percent-num { font-size: 32px; }
+
+.percent-completed {
+  color: var(--grray);
+  font-size: 14px;
+}
+
+.book-chapters {
+  font-family: 'Roboto Slab', serif;
+  margin: auto auto auto -40px;
+}
+
+.cur-chapter-h {
+  color: #bbb;
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+
+.cur-chapter { margin-bottom: 26px; }
+
+.cur-chapter-btn {
+  background-color: var(--azure);
+  border: none;
+  border-radius: 5px;
+  color: #d8d8d8;
+  font-size: 14px;
+  padding: 10px 30px;
 }

@@ -27,12 +27,13 @@ class CategoryFilter extends React.Component {
     return (
       <>
         <form>
-          <span>Filter:</span>
+          <span className="filter-label">Filter:</span>
           <select
+            className="filter-select"
             name="category"
             onChange={this.handleChange}
           >
-            <option disabled selected hidden>All</option>
+            <option hidden>All</option>
             {bookCategories.map(item => (
               <option value={item} key={item}>{item}</option>
             ))}
