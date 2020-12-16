@@ -18,33 +18,23 @@ function BooksList(props) {
   return (
     <section className="book-list-wrapper">
       <CategoryFilter filterBooks={sorter => handleFilterChange(changeFilter(sorter))} />
-      <h1>BooksList!!!</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>{' '}</th>
-          </tr>
-        </thead>
 
-        {filter && list.filter(book => book.category === filter).map(book => (
-          <Book
-            deleteBook={() => handleRemoveBook(removeBook(book.id))}
-            bookObject={book}
-            key={book.id}
-          />
-        ))}
+      {filter && list.filter(book => book.category === filter).map(book => (
+        <Book
+          deleteBook={() => handleRemoveBook(removeBook(book.id))}
+          bookObject={book}
+          key={book.id}
+        />
+      ))}
 
-        {(!filter || filter === 'All') && list.map(book => (
-          <Book
-            deleteBook={() => handleRemoveBook(removeBook(book.id))}
-            bookObject={book}
-            key={book.id}
-          />
-        ))}
-      </table>
+      {(!filter || filter === 'All') && list.map(book => (
+        <Book
+          deleteBook={() => handleRemoveBook(removeBook(book.id))}
+          bookObject={book}
+          key={book.id}
+        />
+      ))}
+      {/* </table> */}
     </section>
   );
 }

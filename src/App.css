@@ -1,5 +1,15 @@
+:root {
+  --azure: #0290ff;
+  --azure-light: #4386bf;
+  --l-gray: #e8e8e8;
+  --grray: #999;
+}
+
 .App {
+  background-color: #f5f6fa;
+  font-family: 'Montserrat', sans-serif !important;
   text-align: center;
+  width: 1200px;
 }
 
 .App-logo {
@@ -38,4 +48,119 @@
   100% {
     transform: translateY(0);
   }
+}
+
+#nav {
+  background-color: #fff;
+  display: flex;
+  height: 95px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.nav-btn {
+  background: #fff;
+  border: none;
+}
+
+.Bookstore-btn {
+  color: var(--azure);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.Books-btn {
+  color: #121212;
+  padding: 0 30px !important;
+}
+
+.Categories-btn { color: var(--grray); }
+
+.Books-btn,
+.Categories-btn {
+  font-size: 13px;
+  letter-spacing: 1.7px;
+  vertical-align: super;
+}
+
+#nav-icon {
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  border: 1px solid gray;
+}
+
+#form-section {
+  border-top: 2px solid #eaeaea;
+  margin: 50px auto 0 auto;
+  padding: 30px 0 200px;
+  text-align: left;
+  width: 90%;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-title {
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.form-book-title,
+.form-book-category {
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  padding: 13px;
+}
+
+.form-book-title { width: 50%; }
+
+.form-book-category {
+  appearance: none;
+  background: linear-gradient(-65deg, white 50%, transparent 50%) no-repeat, linear-gradient(65deg, transparent 50%, var(--azure) 50%) no-repeat, linear-gradient(white, white) no-repeat;
+  background-size: 10% 50%, 18% 50%, 100%;
+  background-position: 95% 45%, 94% 45%, 0;
+  width: 25%;
+}
+
+.form-book-title::placeholder,
+.form-book-category {
+  color: #c4c4c4;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.form-btn {
+  background-color: var(--azure);
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  width: 20%;
+}
+
+.filter-label {
+  color: #888;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.filter-select {
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  color: #444;
+  letter-spacing: 1px;
+  padding: 6px 30px;
+  text-align: center;
+  -webkit-appearance: none;
+}
+
+.filter-select::-webkit-inner-spin-button {
+  padding-left: 10px;
 }
