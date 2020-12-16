@@ -8,7 +8,7 @@ import '../components/book.css';
 import { removeBook, changeFilter } from '../actions';
 import CategoryFilter from '../components/CategoryFilter';
 
-function BooksList(props) {
+const BooksList = props => {
   const {
     list, removeBook, changeFilter, filter,
   } = props;
@@ -34,10 +34,9 @@ function BooksList(props) {
           key={book.id}
         />
       ))}
-      {/* </table> */}
     </section>
   );
-}
+};
 
 const mapStateToProps = ({ list, filter }) => ({ list, filter });
 const mapDispatchToProps = dispatch => ({

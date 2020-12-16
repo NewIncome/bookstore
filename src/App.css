@@ -8,6 +8,7 @@
 .App {
   background-color: #f5f6fa;
   font-family: 'Montserrat', sans-serif !important;
+  margin: auto;
   text-align: center;
   width: 1200px;
 }
