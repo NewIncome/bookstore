@@ -2,6 +2,8 @@
 This is a web app to help fictional Magic-books Inc. organize and manage their bookstore, it will be fast, dynamic and responsive to user actions. Coded mainly with React and Redux.
 Built according to [Microverse's requirements](https://microverse.pathwright.com/library/react-redux-v11/184438/path/step/106376026/).
 
+<div style="text-align: center;"><img src="https://user-images.githubusercontent.com/42077060/102394252-16cfd000-3f9f-11eb-82fa-848e6d83c5be.png" alt="image" style="zoom: 33%;" /></div>
+
 ## Links
 [GitHub Repo](https://github.com/NewIncome/bookstore)
 [:globe_with_meridians::computer: Heroku Livelink](https://magicbooksinc-bookstore.herokuapp.com/)
